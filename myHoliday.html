@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>휴일 일정 달력</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"맑은 고딕";
+}
+
+body{
+    background:#eef5e7;
+    padding:30px;
+}
+
+.container{
+    width:900px;
+    margin:auto;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.calendar-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:15px;
+}
+
+button{
+    padding:8px 15px;
+    cursor:pointer;
+}
+
+#monthYear{
+    font-size:28px;
+    font-weight:bold;
+}
+
+.calendar{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:5px;
+}
+
+.day-name{
+    background:#4CAF50;
+    color:white;
+    text-align:center;
+    padding:10px;
+    font-weight:bold;
+}
+
+.day{
+    height:90px;
+    border:1px solid #ccc;
+    padding:5px;
+    cursor:pointer;
+}
+
+.day:hover{
+    background:#dff5d9;
+}
+
+.today{
+    background:#ffe082;
+}
+
+.event{
+    background:#81c784;
+    color:white;
+    border-radius:5px;
+}
+
+#schedule{
+    margin-top:30px;
+    padding:20px;
+    border:2px solid #4CAF50;
+    border-radius:10px;
+    min-height:180px;
+}
+
+#schedule h2{
+    margin-bottom:10px;
+}
+
+ul{
+    margin-left:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>나의 휴일 일정</h1>
+
+<div class="calendar-header">
+<button onclick="prevMonth()">◀</button>
+
+<div id="monthYear"></div>
+
+<button onclick="nextMonth()">▶</button>
+</div>
+
+<div class="calendar" id="calendar"></div>
+
+<div id="schedule">
+<h2><mark>📅 날짜를 선택하세요.</mark></h2>
+<p>달력의 날짜를 클릭하면<br>일정이 표시됩니다.</p>
+</div>
+
+</div>
+
+<script>
+
+const calendar=document.getElementById("calendar");
+const monthYear=document.getElementById("monthYear");
+const schedule=document.getElementById("schedule");
+
+let today=new Date();
+let currentMonth=today.getMonth();
+let currentYear=today.getFullYear();
+
+const events={
+
+"2026-7-3":[
+"🎧 좋아하는 노래 들으면서 놀기",
+"🍣 친구랑 맛있는 초밥 먹으러 가기",
+"🍪 달달한 간식 먹으면서 하루 마무리하기"
+],
+
+"2026-7-8":[
+"🎥 친구랑 영화 보러 가기! 군체 재미있을 것 같아",
+"🎤 친구랑 노래방 가기",
+"🧋 공차 버블티 먹었다가 집으로 귀가"
+],
+
+"2026-7-9":[
+"⚾ 야구 직관",
+"🛍️ 쇼핑가서 필요한 옷 구매하기"
+],
+
+"2026-7-25":[
+"✈️ 제주도 여행 출발일",
+"🍊🌿 귤과 녹차를 곁들인 맛있는 저녁식사"
+],
+
+"2026-7-26":[
+"🛁 호텔에서 반식욕 즐기고 일정 시작",
+"🥰 예쁜 카페 가기",
+"🎂 맛있는 디저트 사서 집으로 귀가"
+]
+
+};
+
+const week=["일","월","화","수","목","금","토"];
+
+function drawCalendar(){
+
+calendar.innerHTML="";
+
+week.forEach(d=>{
+
+const div=document.createElement("div");
+div.className="day-name";
+div.innerHTML=d;
+
+calendar.appendChild(div);
+
+});
+
+monthYear.innerHTML=currentYear+"년 "+(currentMonth+1)+"월";
+
+let firstDay=new Date(currentYear,currentMonth,1).getDay();
+let lastDate=new Date(currentYear,currentMonth+1,0).getDate();
+
+for(let i=0;i<firstDay;i++){
+
+const empty=document.createElement("div");
+calendar.appendChild(empty);
+
+}
+
+for(let day=1;day<=lastDate;day++){
+
+const div=document.createElement("div");
+div.className="day";
+
+const key=currentYear+"-"+(currentMonth+1)+"-"+day;
+
+if(events[key]){
+div.classList.add("event");
+}
+
+if(day==today.getDate()
+&&currentMonth==today.getMonth()
+&&currentYear==today.getFullYear()){
+div.classList.add("today");
+}
+
+div.innerHTML="<strong>"+day+"</strong>";
+
+div.onclick=function(){
+
+showSchedule(key,day);
+
+};
+
+calendar.appendChild(div);
+
+}
+
+}
+
+function showSchedule(key,day){
+
+if(events[key]){
+
+let html="<h2>📅 "+key+" 일정</h2><ul>";
+
+events[key].forEach(item=>{
+
+html+="<li>"+item+"</li>";
+
+});
+
+html+="</ul>";
+
+schedule.innerHTML=html;
+
+}
+else{
+
+schedule.innerHTML="<h2>"+day+"일</h2><p>등록된 일정이 없습니다.</p>";
+
+}
+
+}
+
+function prevMonth(){
+
+currentMonth--;
+
+if(currentMonth<0){
+currentMonth=11;
+currentYear--;
+}
+
+drawCalendar();
+
+}
+
+function nextMonth(){
+
+currentMonth++;
+
+if(currentMonth>11){
+currentMonth=0;
+currentYear++;
+}
+
+drawCalendar();
+
+}
+
+drawCalendar();
+
+scheduleMidnightUpdate();
+
+function scheduleMidnightUpdate() {
+
+    const now = new Date();
+
+    const nextMidnight = new Date(
+        now.getFullYear(),
+        now.getMonth(),
+        now.getDate() + 1,
+        0, 0, 0, 0
+    );
+
+    const timeUntilMidnight = nextMidnight - now;
+
+    setTimeout(function(){
+
+        today = new Date();
+
+        drawCalendar();
+
+        scheduleMidnightUpdate();
+
+    }, timeUntilMidnight);
+
+}
+
+</script>
+
+</body>
+</html>
