@@ -1,11 +1,11 @@
-// 도시 선택 요소
+
 const citySelect = document.getElementById("city-select");
 
-// 날씨 출력 영역
+
 const weatherBox = document.getElementById("weather-box");
 
 
-// 도시 변경 이벤트
+
 citySelect.addEventListener("change", async function(){
 
     const selectedOption = citySelect.options[citySelect.selectedIndex];
@@ -16,7 +16,7 @@ citySelect.addEventListener("change", async function(){
     const coordinate = selectedOption.value;
 
 
-    // 선택 초기화
+  
     if(coordinate === "none"){
 
         weatherBox.innerHTML =
@@ -27,11 +27,11 @@ citySelect.addEventListener("change", async function(){
     }
 
 
-    // 위도, 경도 분리
+   
     const [latitude, longitude] = coordinate.split(",");
 
 
-    // 로딩 화면 표시
+    
     weatherBox.innerHTML =
     "🌤 날씨 정보를 가져오는 중... ⏳";
 
@@ -39,7 +39,7 @@ citySelect.addEventListener("change", async function(){
 
     try{
 
-        // Open-Meteo API 요청
+       
         const response = await fetch(
 
             `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m`
@@ -47,12 +47,12 @@ citySelect.addEventListener("change", async function(){
         );
 
 
-        // JSON 변환
+       
         const data = await response.json();
 
 
 
-        // 현재 날씨 데이터 가져오기
+        
         const temperature =
         data.current.temperature_2m;
 
@@ -62,7 +62,7 @@ citySelect.addEventListener("change", async function(){
 
 
 
-        // 화면 출력
+        
         weatherBox.innerHTML =
 
         `

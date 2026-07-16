@@ -1,6 +1,6 @@
 function startGame() {
 
-    // 1~50 사이 랜덤 숫자 생성
+    
     const computerNum = Math.floor(Math.random() * 50) + 1;
 
     let userNum;
@@ -12,7 +12,7 @@ function startGame() {
 
         userNum = prompt("1~50 사이의 숫자를 입력하세요.");
 
-        // 취소 버튼 누르면 종료
+        
         if (userNum === null) {
             alert("게임이 종료되었습니다.");
             break;
@@ -21,19 +21,19 @@ function startGame() {
         userNum = Number(userNum);
         count++;
 
-        // 숫자가 아닌 경우
+       
         if (isNaN(userNum)) {
             alert("숫자를 입력해주세요!");
             continue;
         }
 
-        // 범위를 벗어난 경우
+       
         if (userNum < 1 || userNum > 50) {
             alert("1부터 50 사이의 숫자를 입력해주세요.");
             continue;
         }
 
-        // Up & Down
+       
         if (userNum > computerNum) {
             alert("⬇ Down!");
         }

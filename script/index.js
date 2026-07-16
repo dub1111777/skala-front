@@ -1,6 +1,4 @@
-// ===============================
-// 현재 날짜 표시
-// ===============================
+
 
 const today = document.getElementById("today");
 
@@ -29,10 +27,6 @@ ${week[now.getDay()]}`;
 
 
 
-// ===============================
-// 현재 시간
-// ===============================
-
 function updateClock(){
 
     const clock = document.getElementById("clock");
@@ -53,11 +47,6 @@ updateClock();
 setInterval(updateClock,1000);
 
 
-
-
-// ===============================
-// 시간대별 인사말
-// ===============================
 
 function getGreeting(hour){
 
@@ -84,10 +73,6 @@ function getGreeting(hour){
 
 
 
-// ===============================
-// Portal Card Hover 효과
-// ===============================
-
 const cards = document.querySelectorAll(".portal-card");
 
 cards.forEach(card=>{
@@ -103,9 +88,6 @@ cards.forEach(card=>{
 
 
 
-// ===============================
-// Footer 년도 자동 변경
-// ===============================
 
 const footerSmall = document.querySelector("footer small");
 

@@ -1,6 +1,5 @@
 function showMyBag(){
 
-    // 소지품 객체를 담은 배열
     var myBag = [
 
         {
@@ -26,11 +25,11 @@ function showMyBag(){
     ];
 
 
-    // 출력할 문자열
+  
     var bagList = "🎒 내 가방 목록\n\n";
 
 
-    // 반복문으로 객체 출력
+
     for(var i = 0; i < myBag.length; i++){
 
         bagList += 
@@ -43,7 +42,6 @@ function showMyBag(){
     }
 
 
-    // 결과 출력
     alert(bagList);
 
 }

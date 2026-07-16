@@ -2,8 +2,6 @@ import { getWeather } from "./weatherAPI.js";
 
 
 
-// HTML 요소 가져오기
-
 const citySelect =
 document.getElementById("city-select");
 
@@ -14,7 +12,6 @@ document.getElementById("weather-box");
 
 
 
-// 도시 변경 이벤트
 
 citySelect.addEventListener(
 "change",
@@ -51,7 +48,7 @@ async function(){
 
 
 
-    // 위도, 경도 분리
+  
 
     const [latitude, longitude] =
     coordinate.split(",");
@@ -59,7 +56,7 @@ async function(){
 
 
 
-    // 로딩 표시
+  
 
     weatherBox.innerHTML =
     "🌤 날씨 정보를 가져오는 중... ⏳";
@@ -70,7 +67,7 @@ async function(){
     try{
 
 
-        // API 파일 함수 실행
+     
 
         const weather =
         await getWeather(
@@ -80,7 +77,7 @@ async function(){
 
 
 
-        // 화면 출력
+      
 
         weatherBox.innerHTML =
 

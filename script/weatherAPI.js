@@ -1,4 +1,3 @@
-// Open-Meteo API 데이터 담당 파일
 
 
 export async function getWeather(latitude, longitude){

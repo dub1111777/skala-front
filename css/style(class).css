@@ -11,7 +11,6 @@ body{
     color:#111;
 }
 
-/* 가운데 정렬 */
 
 .container{
 
@@ -20,7 +19,7 @@ body{
     margin:100px auto;
 }
 
-/* 제목 */
+
 
 h1{
 
@@ -51,7 +50,6 @@ h1 span{
     font-weight: 600;
 }
 
-/* 테이블 */
 
 table{
 
@@ -98,7 +96,6 @@ tbody tr:hover{
     background:#fafafa;
 }
 
-/* 전공 */
 
 .major{
 
@@ -109,7 +106,6 @@ tbody tr:hover{
     font-weight:600;
 }
 
-/* 점심 */
 
 .lunch{
 
@@ -120,7 +116,6 @@ tbody tr:hover{
     font-weight:600;
 }
 
-/* 셀 Hover */
 
 td:hover{
 

@@ -40,7 +40,6 @@ h1 span{
     margin-bottom:70px;
 }
 
-/* ---------- Fieldset ---------- */
 
 fieldset{
 
@@ -139,7 +138,7 @@ legend{
     margin-top:0;
 }
 
-/* ---------- Label ---------- */
+
 
 label{
 
@@ -157,7 +156,7 @@ label:first-of-type{
     margin-top:0;
 }
 
-/* ---------- Input ---------- */
+
 
 input,
 select,
@@ -194,7 +193,7 @@ textarea:focus{
     box-shadow:0 0 0 3px rgba(101,167,255,.15);
 }
 
-/* ---------- Buttons ---------- */
+
 
 .button-area{
 

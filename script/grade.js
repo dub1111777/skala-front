@@ -1,13 +1,12 @@
 function checkGrade(){
 
-    // 과목 배열
+   
     var subjects = ["HTML", "CSS", "JavaScript"];
 
-    // 총점 변수
+  
     var total = 0;
 
 
-    // 과목 개수만큼 반복
     for(var i = 0; i < subjects.length; i++){
 
         var score = prompt(subjects[i] + " 점수를 입력하세요.");
@@ -19,11 +18,9 @@ function checkGrade(){
     }
 
 
-    // 평균 계산
     var average = total / subjects.length;
 
 
-    // 합격 여부 판단
     var result;
 
 
@@ -40,7 +37,6 @@ function checkGrade(){
     }
 
 
-    // 등급 계산
     var grade;
 
 
@@ -72,7 +68,6 @@ function checkGrade(){
 
 
 
-    // 결과 출력
 
     alert(
         "총점: " + total + "점\n" +

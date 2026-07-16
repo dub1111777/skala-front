@@ -10,14 +10,14 @@ body{
     color:#111;
 }
 
-/* 컨테이너 */
+
 
 .container{
     width:1200px;
     margin:100px auto;
 }
 
-/* 제목 */
+
 
 h1{
     font-size:56px;
@@ -36,7 +36,10 @@ h1 span{
     margin-bottom:90px;
 }
 
-/* 카드 */
+.intro span {
+    color: #65A7FF;
+    font-weight: bold;
+}
 
 .trip-list{
     display:flex;
@@ -70,7 +73,7 @@ h1 span{
     transform:translateY(0);
 }
 
-/* 배경 애니메이션 */
+
 
 .trip-item::before{
 
@@ -99,7 +102,7 @@ h1 span{
     transform:translateY(0);
 }
 
-/* 여행 아이콘 */
+
 
 .trip-item::after{
 
@@ -127,7 +130,7 @@ h1 span{
     transform:translateY(0);
 }
 
-/* 카드 Hover */
+
 
 .trip-item:hover{
 
@@ -138,7 +141,7 @@ h1 span{
     color:white;
 }
 
-/* 번호 */
+
 
 .trip-item span{
 
@@ -172,7 +175,6 @@ h1 span{
     color:#fff;
 }
 
-/* 선 */
 
 .line{
 
@@ -192,7 +194,7 @@ h1 span{
     background:#fff;
 }
 
-/* 제목 */
+
 
 .trip-item h2{
 
@@ -236,7 +238,7 @@ h1 span{
     width:100%;
 }
 
-/* 이미지 */
+
 
 .trip-item img{
 
@@ -262,7 +264,6 @@ h1 span{
     transform:scale(1.07) translateY(-5px);
 }
 
-/* 설명 */
 
 .trip-item p{
 
@@ -280,7 +281,7 @@ h1 span{
     color:#ddd;
 }
 
-/* 영상 */
+
 
 .trip-item video{
 
@@ -291,7 +292,6 @@ h1 span{
     margin-bottom:20px;
 }
 
-/* 오디오 */
 
 .trip-item audio{
 
