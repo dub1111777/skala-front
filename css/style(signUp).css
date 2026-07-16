@@ -1,0 +1,240 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Pretendard',sans-serif;
+}
+
+body{
+
+    font-family:'Pretendard',sans-serif;
+    background:#fff;
+    color:#111;
+}
+
+.container{
+
+    width:900px;
+
+    margin:100px auto;
+}
+
+h1{
+
+    font-size:56px;
+
+    margin-bottom:10px;
+}
+
+h1 span{
+
+    color:#65A7FF;
+}
+
+.intro{
+
+    color:#777;
+
+    font-size:18px;
+
+    margin-bottom:70px;
+}
+
+/* ---------- Fieldset ---------- */
+
+fieldset{
+
+    border:1px solid #ddd;
+
+    border-radius:18px;
+
+    padding:40px;
+
+    margin-bottom:35px;
+}
+
+legend{
+
+    padding:0 15px;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    color:#65A7FF;
+}
+
+.required{
+    color:#E74C3C;
+    font-size:15px;
+    font-weight:500;
+}
+
+.email-wrap{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+}
+
+.email-wrap input{
+
+    flex:1;
+}
+
+.email-wrap select{
+
+    width:220px;
+}
+
+.radio-group{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:28px;
+
+    margin-top:12px;
+}
+
+.radio-group label{
+
+    display:flex;
+
+    align-items:center;
+
+    margin:0;
+
+    font-weight:400;
+}
+
+.check-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    margin-top:15px;
+}
+
+.check-group input,
+.radio-group input{
+
+    width:auto;
+
+    margin-right:8px;
+}
+
+.radio-group input{
+
+    width:auto;
+
+    margin-right:6px;
+
+    margin-top:0;
+}
+
+/* ---------- Label ---------- */
+
+label{
+
+    display:block;
+
+    font-weight:600;
+
+    margin-bottom:10px;
+
+    margin-top:28px;
+}
+
+label:first-of-type{
+
+    margin-top:0;
+}
+
+/* ---------- Input ---------- */
+
+input,
+select,
+textarea{
+
+    width:100%;
+
+    padding:16px 20px;
+
+    font-size:17px;
+
+    font-family:'Pretendard',sans-serif;
+
+    border:1px solid #ddd;
+
+    border-radius:12px;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+textarea{
+
+    resize:vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+
+    border-color:#65A7FF;
+
+    box-shadow:0 0 0 3px rgba(101,167,255,.15);
+}
+
+/* ---------- Buttons ---------- */
+
+.button-area{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:15px;
+
+    margin-top:20px;
+}
+
+.button-area input{
+
+    width:170px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.button-area input[type=reset]{
+
+    background:white;
+
+    border:1px solid #bbb;
+}
+
+.button-area input[type=submit]{
+
+    background:#65A7FF;
+
+    color:white;
+
+    border:none;
+}
+
+.button-area input:hover{
+
+    transform:translateY(-3px);
+}

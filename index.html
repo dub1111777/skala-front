@@ -1,17 +1,299 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome SKALA</title>
+    <title>황가영의 Universe 🚀</title>
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style(index).css">
 </head>
+
 <body>
-    <h1>환영 인사</h1>
-    <p>스칼라에 오신 것을 환영합니다.</p>
+
+<div class="container">
+
+  
+
+    <header>
+
+        <div class="header-text">
+
+            <h1>🚀 황가영의 Universe</h1>
+
+            <p>
+                저의 프로필, 학습 내용, 여행 기록을 한 곳에서 관리하는
+                개인 메인 포털입니다.
+            </p>
+
+        </div>
+
+        <div class="welcome-card">
+
+            <h3>Welcome!</h3>
+
+            <p id="today"></p>
+
+        </div>
+
+    </header>
+
+
+
     <nav>
-    <a href="myProfile.html">THIS IS ME (자기소개) </a><br>
-    <a href="myHoliday.html">My holiday (나의 휴일)</a><br>
-    <a href="myClass.html">Weekly time table (주간 시간표)</a>
-</nav>
+
+        <ul>
+
+            <li><a href="myProfile.html">👤 Profile</a></li>
+
+            <li><a href="myClass.html">📚 Class</a></li>
+
+            <li><a href="myHoliday.html">🏖 Holiday</a></li>
+
+            <li><a href="myTrip.html">✈ Trip</a></li>
+
+            <li><a href="signUp.html">📝 Sign Up</a></li>
+
+        </ul>
+
+    </nav>
+
+
+
+
+
+    <div class="content-wrapper">
+
+
+
+
+        <main>
+
+
+
+
+            <section class="news">
+
+                <h2>📌 오늘의 주요 소식</h2>
+
+                <article>
+
+                    <h3>여행 앨범이 새롭게 업데이트되었습니다.</h3>
+
+                    <p>
+
+                       후쿠오카의 모모치해변과 제주도 그리고 서울의
+                       여행사진을 추가했습니다. Trip 페이지에서 확인하세요
+
+                    </p>
+
+                    <time datetime="2026-06-11">
+                        2026년 7월 18일
+                    </time>
+
+                </article>
+
+            </section>
+
+
+
+
+
+            <section class="portal">
+
+                <h2>📂 포털 바로가기</h2>
+
+                <div class="card-grid">
+
+                    <div class="portal-card">
+
+                        <h3>👤 Profile</h3>
+
+                        <p>자기소개와 관심 분야를 확인합니다.</p>
+
+                        <a href="myProfile.html">바로가기 →</a>
+
+                    </div>
+
+                    <div class="portal-card">
+
+                        <h3>📚 Class</h3>
+
+                        <p>이번 학기 강의 시간표를 확인합니다.</p>
+
+                        <a href="myClass.html">바로가기 →</a>
+
+                    </div>
+
+                    <div class="portal-card">
+
+                        <h3>🏖 Holiday</h3>
+
+                        <p>휴일 계획과 일정들을 확인합니다.</p>
+
+                        <a href="myHoliday.html">바로가기 →</a>
+
+                    </div>
+
+                    <div class="portal-card">
+
+                        <h3>✈ Trip</h3>
+
+                        <p>여행 사진과 추억을 만나보세요.</p>
+
+                        <a href="myTrip.html">바로가기 →</a>
+
+                    </div>
+
+                    <div class="portal-card">
+
+                        <h3>📝 Sign Up</h3>
+
+                        <p>회원가입 페이지입니다.</p>
+
+                        <a href="signUp.html">바로가기 →</a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+
+
+            <section class="gallery">
+
+                <h2>📸 이달의 베스트 컷</h2>
+
+                <figure>
+
+                    <img src="/media/로마.jpg"
+                         alt="이탈리아 로마"
+                         width="100%">
+
+                    <figcaption>
+
+                        이탈리아 로마의 성 바티칸 풍경
+
+                    </figcaption>
+
+                </figure>
+
+            </section>
+
+        </main>
+
+
+        <aside>
+
+
+
+            <section class="info-box">
+
+                <h2>🌤 실시간 정보</h2>
+
+                <p>현재 위치</p>
+
+                <strong>광주광역시 광산구 📍</strong>
+
+            </section>
+
+
+
+            <section class="info-box">
+
+                <h3>🌎 세계 날씨</h3>
+
+                <select id="city-select">
+
+                    <option value="none">도시를 선택하세요</option>
+
+                    <option value="37.56,126.97">
+                        🇰🇷 서울
+                    </option>
+
+                    <option value="35.67,139.65">
+                        🇯🇵 도쿄
+                    </option>
+
+                    <option value="48.85,2.35">
+                        🇫🇷 파리
+                    </option>
+
+                </select>
+
+                <div id="weather-box">
+
+                    도시를 선택하면 좌표가 표시됩니다.
+
+                </div>
+
+            </section>
+
+
+
+            <section class="info-box">
+
+                <h3>🎮 JavaScript 놀이터</h3>
+
+                <button onclick="startGame()">
+                    업다운 게임
+                </button>
+
+                <button onclick="checkGrade()">
+                    성적 계산기
+                </button>
+
+                <button onclick="showMyBag()">
+                    내 가방 보기
+                </button>
+
+            </section>
+
+
+
+            <section class="info-box">
+
+                <h3>🕒 현재 시간</h3>
+
+                <p id="clock"></p>
+
+            </section>
+
+        </aside>
+
+    </div>
+
+
+
+    <footer>
+
+
+        <p>
+
+            HTML5 Semantic Tag를 활용하여 제작한 개인 포털입니다.
+
+        </p>
+
+
+    </footer>
+
+</div>
+
+
+
+<script src="script/upDown.js"></script>
+<script src="script/grade.js"></script>
+<script src="script/bag.js"></script>
+
+
+<script type="module" src="script/realtimeInfo.js"></script>
+
+<script src="script/index.js"></script>
+
 </body>
 </html>

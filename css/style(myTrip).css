@@ -1,0 +1,359 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Pretendard',sans-serif;
+    background:#fff;
+    color:#111;
+}
+
+/* 컨테이너 */
+
+.container{
+    width:1200px;
+    margin:100px auto;
+}
+
+/* 제목 */
+
+h1{
+    font-size:56px;
+    margin-bottom:12px;
+}
+
+h1 span{
+    color:#65A7FF;
+}
+
+.intro{
+    width:650px;
+    font-size:20px;
+    color:#666;
+    line-height:1.8;
+    margin-bottom:90px;
+}
+
+/* 카드 */
+
+.trip-list{
+    display:flex;
+    gap:40px;
+}
+
+.trip-item{
+
+    position:relative;
+    flex:1;
+    background:#fff;
+    border:1px solid #e8e8e8;
+    border-radius:20px;
+    padding:35px;
+    overflow:hidden;
+
+    opacity:0;
+    transform:translateY(40px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease,
+        box-shadow .45s ease;
+
+    z-index:1;
+}
+
+.trip-item.show{
+
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* 배경 애니메이션 */
+
+.trip-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        180deg,
+        #111 0%,
+        #1f2f55 60%,
+        #65A7FF 100%
+    );
+
+    transform:translateY(-100%);
+
+    transition:.5s;
+
+    z-index:-1;
+}
+
+.trip-item:hover::before{
+
+    transform:translateY(0);
+}
+
+/* 여행 아이콘 */
+
+.trip-item::after{
+
+    content:"✈";
+
+    position:absolute;
+
+    top:25px;
+
+    right:30px;
+
+    font-size:28px;
+
+    opacity:0;
+
+    transform:translateY(-15px);
+
+    transition:.4s;
+}
+
+.trip-item:hover::after{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+/* 카드 Hover */
+
+.trip-item:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 30px 60px rgba(0,0,0,.15);
+
+    color:white;
+}
+
+/* 번호 */
+
+.trip-item span{
+
+    width:55px;
+
+    height:55px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#f2f2f2;
+
+    color:#666;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    transition:.4s;
+}
+
+.trip-item:hover span{
+
+    background:#65A7FF;
+
+    color:#fff;
+}
+
+/* 선 */
+
+.line{
+
+    width:100%;
+
+    height:2px;
+
+    background:#111;
+
+    margin:20px 0 35px;
+
+    transition:.4s;
+}
+
+.trip-item:hover .line{
+
+    background:#fff;
+}
+
+/* 제목 */
+
+.trip-item h2{
+
+    position:relative;
+
+    display:inline-block;
+
+    font-size:36px;
+
+    margin-bottom:35px;
+
+    transition:.35s;
+}
+
+.trip-item:hover h2{
+
+    color:#65A7FF;
+}
+
+.trip-item h2::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:3px;
+
+    background:#65A7FF;
+
+    transition:.4s;
+}
+
+.trip-item:hover h2::after{
+
+    width:100%;
+}
+
+/* 이미지 */
+
+.trip-item img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:14px;
+
+    margin-bottom:20px;
+
+    filter:brightness(.95);
+
+    transition:.5s;
+}
+
+.trip-item:hover img{
+
+    filter:brightness(1.1);
+
+    transform:scale(1.07) translateY(-5px);
+}
+
+/* 설명 */
+
+.trip-item p{
+
+    color:#666;
+
+    line-height:1.8;
+
+    margin:20px 0 25px;
+
+    transition:.35s;
+}
+
+.trip-item:hover p{
+
+    color:#ddd;
+}
+
+/* 영상 */
+
+.trip-item video{
+
+    width:100%;
+
+    border-radius:12px;
+
+    margin-bottom:20px;
+}
+
+/* 오디오 */
+
+.trip-item audio{
+
+    width:100%;
+
+    filter:brightness(.95);
+
+    transition:.35s;
+}
+
+.trip-item:hover audio{
+
+    filter:brightness(1.1);
+}
+
+.stamp{
+
+    position:absolute;
+
+    top:20px;
+
+    right:20px;
+
+    padding:10px 18px;
+
+    border:3px solid #65A7FF;
+
+    color:#65A7FF;
+
+    font-weight:bold;
+
+    font-size:18px;
+
+    border-radius:8px;
+
+    transform:rotate(-15deg) scale(0);
+
+    opacity:0;
+
+    transition:.4s;
+}
+
+.trip-item.visited .stamp{
+
+    transform:rotate(-15deg) scale(1);
+
+    opacity:1;
+}
+
+p.trip-card{
+
+    background:none;
+    border:none;
+    padding:10px 0;
+    margin:20px 0;
+    color:#666;
+    line-height:1.8;
+    text-align:center;
+    transition:.35s;
+}
+
+.trip-item:hover p.trip-card{
+
+    color:#ffffff;
+}

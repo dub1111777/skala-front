@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>회원가입</title>
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style(signUp).css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Sign <span>Up</span></h1>
+
+    <p class="intro">
+        새로운 시작을 위해 회원 정보를 입력해주세요.
+    </p>
+
+<form action="signUpResult.html" method="get">
+
+<fieldset>
+
+<legend>
+    계정 정보
+</legend>
+
+<label>아이디 <span class="required"> (필수)</span></label>
+<input type="text"
+name="id"
+placeholder="4~15자 영문/숫자"
+required>
+
+<label>비밀번호 <span class="required"> (필수)</span></label>
+<input type="password"
+name="pw"
+placeholder="8자 이상 입력"
+required>
+
+<label>이메일  <span class="required"> (필수)</span></label>
+
+<div class="email-wrap">
+
+<input type="text"
+name="emailId"
+placeholder="example"
+required>
+
+<span>@</span>
+
+<select name="email" required>
+    <option value="">선택</option>
+    <option>naver.com</option>
+    <option>gmail.com</option>
+    <option>daum.net</option>
+    <option>직접입력</option>
+</select>
+
+</div>
+
+</fieldset>
+
+
+<fieldset>
+
+<legend>개인 프로필</legend>
+
+<label>이름</label>
+<input type="text" name="name">
+
+<label>생년월일</label>
+<input
+    type="date"
+    name="birth"
+    min="1800-01-01"
+    max="2999-12-31">
+
+<label>성별</label>
+
+<div class="radio-group">
+
+<label><input type="radio" name="gender"> 남성</label>
+
+<label><input type="radio" name="gender"> 여성</label>
+
+<label><input type="radio" name="gender"> 선택안함</label>
+
+</div>
+
+<label>가입 경로</label>
+
+<select>
+
+<option>선택해 주세요</option>
+
+<option>학교</option>
+
+<option>친구 추천</option>
+
+<option>검색</option>
+
+<option>SNS</option>
+
+</select>
+
+</fieldset>
+
+<fieldset>
+
+<legend>관심 분야</legend>
+
+<div class="check-group">
+
+<label>
+<input type="checkbox">
+웹 프론트엔드 (Vue.js / HTML)
+</label>
+
+<label>
+<input type="checkbox">
+UI / UX 디자인
+</label>
+
+<label>
+<input type="checkbox">
+백엔드 & 데이터베이스
+</label>
+
+<label>
+<input type="checkbox">
+클라우드 & 인프라
+</label>
+
+</div>
+
+</fieldset>
+
+<fieldset>
+
+<legend>자기소개</legend>
+
+<textarea
+rows="7"
+placeholder="나를 표현하는 한 줄 소개 또는 가입 인사를 작성해주세요.">
+</textarea>
+
+</fieldset>
+
+<div class="button-area">
+
+<input
+type="reset"
+value="초기화">
+
+<input
+type="submit"
+value="회원가입">
+
+</div>
+
+</form>
+
+</div>
+
+</body>
+</html>
